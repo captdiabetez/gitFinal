@@ -32,7 +32,7 @@ class BusinessLogic
                 {
                     
                     case 1:
-                        /*Console.WriteLine("Please input a unit number");
+                        Console.WriteLine("Please input a unit number");
                         int unit_number = Convert.ToInt32(Console.ReadLine());
 
 
@@ -57,7 +57,7 @@ class BusinessLogic
                         var sender = "DoNotReply@18c47f2b-b626-4f60-8704-52dfbf265510.azurecomm.net";
 
 
-                        /*string? inputEmail = resident_email;
+                        string? inputEmail = resident_email;
                         var emailRecipients = new EmailRecipients(new List<EmailAddress> {
                             new EmailAddress(inputEmail) { DisplayName = "Testing" },
                         });
@@ -89,7 +89,7 @@ class BusinessLogic
                                 {
                                     break;
                                 }
-                                //await Task.Delay(TimeSpan.FromSeconds(10));
+                                await Task.Delay(TimeSpan.FromSeconds(10));
 
                             } while (!cancellationToken.IsCancellationRequested);
 
@@ -101,7 +101,7 @@ class BusinessLogic
                         catch (Exception ex)
                         {
                             Console.WriteLine($"Error in sending email, {ex}");
-                        }*/
+                        }
 
                         break;
                     // process unknown package
