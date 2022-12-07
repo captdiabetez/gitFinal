@@ -20,16 +20,15 @@ class GuiTier{
         Console.WriteLine("---------------Dashboard-------------------");
         Console.WriteLine($"Hello: {user.staff_username }; Date/Time: {localDate.ToString()}");
         Console.WriteLine("Please select an option to continue:");
-        Console.WriteLine("1. Send Email Notification");
-        Console.WriteLine("2. Process Picked Package [TBD]");
-        Console.WriteLine("3. Process Unknown Package [TBD]");
-        Console.WriteLine("4. Package Record History");
-        Console.WriteLine("5. Log Out");
+        Console.WriteLine("1. Process Picked Package [TBD]");
+        Console.WriteLine("2. Process Unknown Package");
+        Console.WriteLine("3. Package Record History");
+        Console.WriteLine("4. Log Out");
         int option = Convert.ToInt16(Console.ReadLine());
         return option;
     }
 
-    // show enrollment records returned from database
+    // show package records returned from database
     public void DisplayRecordHistory(DataTable tableEnrollment, DataTable tableResidents){
         Console.WriteLine("---------------Record History List-------------------");
         foreach(DataRow row in tableResidents.Rows){

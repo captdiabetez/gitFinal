@@ -61,7 +61,7 @@ class Datatier{
             tableEnrollment.Load(rdr);
             rdr.Close();
             conn.Close();
-            return tableResidents;
+            return tableEnrollment;
         }
         catch (Exception ex)
         {
@@ -70,6 +70,32 @@ class Datatier{
             return null;
         }
     }
+
+    public void UnknownPackage(string packageName, string packageAddress, string packageService){
+        MySqlConnection conn = new MySqlConnection(connStr);
+        try
+        {
+            conn.Open();
+            string procedure = "addunknown";
+            MySqlCommand cmd = new MySqlCommand(procedure, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@inputPackageName", packageName);
+            cmd.Parameters["@inputPackageName"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@inputPackageAddress", packageAddress);
+            cmd.Parameters["@inputPackageAddress"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@inputPackageService", packageService);
+            cmd.Parameters["@inputPackageService"].Direction = ParameterDirection.Input;
+            cmd.ExecuteNonQuery();
+
+        }
+
+        catch (Exception ex){
+            Console.WriteLine(ex.ToString());
+            conn.Close();
+        }
+
+    }
+
 }
 
 
